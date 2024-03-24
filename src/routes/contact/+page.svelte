@@ -7,11 +7,13 @@
 		<div class="mr-auto place-self-center lg:col-span-7">
 			<h1
 				class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
+				data-testid="contact-heading"
 			>
 				Contact Us
 			</h1>
 			<p
 				class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
+				data-testid="contact-paragraph"
 			>
 				Super Rentals Representatives would love to help you<br />
 				choose a destination or answer any questions you may have.
@@ -35,6 +37,6 @@
 			<img src="images/teaching-tomster.png" alt="tomster" />
 		</div>
 
-		<Button href="/about">About Us</Button>
+		<Button href="/about" data-testid="about-us-button">About Us</Button>
 	</div>
 </section>

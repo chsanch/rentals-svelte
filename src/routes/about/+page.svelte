@@ -7,20 +7,22 @@
 		<div class="mr-auto place-self-center lg:col-span-7">
 			<h1
 				class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
+				data-testid="about-heading"
 			>
-				About Super Rentals!
+				About Super Rentals
 			</h1>
 			<p
 				class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
+				data-testid="about-paragraph"
 			>
-				The Super Rentals website is a delightful project created to explore Ember. By building a
-				property rental site, we can simultaneously imagine traveling AND building Ember
+				The Super Rentals website is a delightful project created to explore Svelte. By building a
+				property rental site, we can simultaneously imagine traveling AND building Svelte
 				applications.
 			</p>
 		</div>
 		<div class="hidden lg:mt-0 lg:col-span-5 lg:flex lg:w-96 lg:h-96">
 			<img src="images/teaching-tomster.png" alt="tomster" />
 		</div>
-		<Button href="/contact">Contact Us</Button>
+		<Button href="/contact" data-testid="contact-us-button">Contact Us</Button>
 	</div>
 </section>

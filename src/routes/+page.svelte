@@ -2,7 +2,6 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import Jumbo from '$lib/components/jumbo.svelte';
 </script>
-
 <Jumbo>
 	<h1
 		class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"

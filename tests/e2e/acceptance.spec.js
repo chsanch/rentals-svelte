@@ -3,6 +3,8 @@ import { expect, test } from '@playwright/test';
 test('visiting /', async ({ page }) => {
 	await page.goto('/');
 	await expect(page).toHaveURL('/');
+  await expect(page.getByTestId('menu')).toBeVisible();
+  await expect(page.getByTestId('menu-home')).toHaveText('SuperRentals');
 	await expect(page.getByTestId('welcome-heading')).toHaveText('Welcome to Super Rentals!');
 	await expect(page.getByTestId('welcome-paragraph')).toHaveText(
 		`We hope you find exactly what you're looking for in a place to stay.`
@@ -14,6 +16,8 @@ test('visiting /', async ({ page }) => {
 
 test('visiting /about', async ({ page }) => {
 	await page.goto('/about');
+  await expect(page.getByTestId('menu')).toBeVisible();
+  await expect(page.getByTestId('menu-home')).toHaveText('SuperRentals');
 	await expect(page).toHaveURL('/about');
 	await expect(page.getByTestId('about-heading')).toHaveText('About Super Rentals');
 	await expect(page.getByTestId('about-paragraph'))
@@ -28,6 +32,8 @@ test('visiting /about', async ({ page }) => {
 
 test('visiting /contact', async ({ page }) => {
 	await page.goto('/contact');
+  await expect(page.getByTestId('menu')).toBeVisible();
+  await expect(page.getByTestId('menu-home')).toHaveText('SuperRentals');
 	await expect(page).toHaveURL('/contact');
 	await expect(page.getByTestId('contact-heading')).toHaveText('Contact Us');
 	await expect(page.getByTestId('contact-paragraph')).toHaveText(
@@ -42,4 +48,19 @@ test('visiting /contact', async ({ page }) => {
 test('visitin /getting-in-touch', async ({ page }) => {
   await page.goto('/getting-in-touch');
   await expect(page).toHaveURL('/contact');
+});
+
+test('navgation using navbar', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.getByTestId('menu')).toBeVisible();
+  await expect(page.getByTestId('menu-home')).toHaveText('SuperRentals');
+  await expect(page.getByTestId('menu-about')).toHaveText('About');
+  await expect(page.getByTestId('menu-contact')).toHaveText('Contact');
+
+  await page.getByTestId('menu-about').click();
+  await expect(page).toHaveURL('/about');
+  await page.getByTestId('menu-contact').click();
+  await expect(page).toHaveURL('/contact');
+  await page.getByTestId('menu-home').click();
+  await expect(page).toHaveURL('/');
 });

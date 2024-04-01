@@ -1,6 +1,7 @@
 <script>
 	import * as Card from '$lib/components/ui/card';
 	import RentalImage from '$lib/components/rental/image.svelte';
+  import Map from '$lib/components/map.svelte';
 </script>
 
 <Card.Root>
@@ -30,5 +31,6 @@
 				<span class="text-sm italic">15</span>
 			</div>
 		</div>
+    <Map lat={37.7749} lng={-122.4194} zoom={10} width={120} height={150} />
 	</Card.Content>
 </Card.Root>

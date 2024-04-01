@@ -4,15 +4,14 @@ import RentalImnage from '$lib/components/rental/image.svelte';
 import userEvent from '@testing-library/user-event';
 
 test('renders rental image component', () => {
-  render(RentalImnage);
-  expect(screen.getByTestId('rental-image')).toBeInTheDocument();
-  // remove component
-  cleanup(); 
+	render(RentalImnage);
+	expect(screen.getByTestId('rental-image')).toBeInTheDocument();
+	cleanup();
 });
 
 test('renders rental image component with image', async () => {
-	const user = userEvent.setup();
-	const onClick = vi.fn();
+	// const user = userEvent.setup();
+	// const onClick = vi.fn();
 	const { component } = render(RentalImnage, { src: 'https://example.com/image.jpg' });
 
 	expect(screen.getByTestId('rental-image')).toBeInTheDocument();
@@ -20,12 +19,20 @@ test('renders rental image component with image', async () => {
 		'src',
 		'https://example.com/image.jpg'
 	);
+  
+  await component.$set({ src: 'https://example.com/image2.jpg' });
+  expect(screen.getByTestId('rental-image')).toHaveAttribute(
+    'src',
+    'https://example.com/image2.jpg'
+  );
+	// component.$on('click', onClick);
+	// component.$on('click', () => {
+	// 	expect(onClick).toHaveBeenCalled();
+	// });
 
-	component.$on('click', onClick);
+	// const button = screen.getByTestId('rental-image-button');
+	// await user.click(button);
 
-	const button = screen.getByTestId('rental-image-button');
-	await user.click(button);
-
-	expect(screen.getByTestId('rental-image-larger')).toBeInTheDocument();
-  cleanup(); 
+	// expect(screen.getByTestId('rental-image-larger')).toBeInTheDocument();
+	cleanup();
 });

@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import Jumbo from '$lib/components/jumbo.svelte';
 	import Rental from '$lib/components/rental.svelte';
+	export let data;
 </script>
 
 <Jumbo>
@@ -21,7 +22,7 @@
 </Jumbo>
 
 <div class="grid grid-rows max-w-screen-xl px-4 py-8 mx-auto gap-3">
-  <Rental />
-  <Rental />
-  <Rental />
+	{#each data.data as rental}
+		<Rental {...rental} />
+	{/each}
 </div>

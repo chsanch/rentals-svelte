@@ -6,7 +6,7 @@ export async function load({ fetch }) {
 	let { data } = await res.json();
 
 	const parsed = data.map((rental) => {
-		let { attributes } = rental;
+		let { id, attributes } = rental;
 		let type;
 
 		if (COMMUNITY_CATEGORIES.includes(attributes.category)) {
@@ -15,7 +15,7 @@ export async function load({ fetch }) {
 			type = 'Standalone';
 		}
 
-		return { type, ...attributes };
+		return { id, type, ...attributes };
 	}); // return the data
 	return { data: parsed };
 }

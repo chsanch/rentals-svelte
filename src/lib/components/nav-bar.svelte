@@ -1,3 +1,12 @@
+<script>
+	import { page } from '$app/stores';
+
+	let active_class = 'text-white rounded-md px-3 py-2 text-m font-bold';
+	let inactive_class = 'text-gray-300 hover:bg-orange-700 rounded-md px-3 py-2 text-m font-medium';
+	let is_active = (href) => href === $page.url.pathname;
+	let link_class = (href) => (is_active(href) ? active_class : inactive_class);
+</script>
+
 <nav class="bg-orange-400" data-testid="menu">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 		<div class="relative flex h-16 items-center justify-between">
@@ -11,16 +20,17 @@
 					<div class="flex space-x-4">
 						<a
 							href="/about"
-							class="text-white rounded-md px-3 py-2 text-m font-bold"
-							aria-current="page"
-              data-testid="menu-about"
+							class={link_class('/about')}
+							aria-current={is_active('/about') ? 'page' : false}
+							data-testid="menu-about"
 						>
 							About
 						</a>
 						<a
 							href="/contact"
-							class="text-gray-300 hover:bg-orange-700 rounded-md px-3 py-2 text-m font-medium"
-              data-testid="menu-contact"
+							class={link_class('/contact')}
+							aria-current={is_active('/contact') ? 'page' : false}
+							data-testid="menu-contact"
 						>
 							Contact
 						</a>

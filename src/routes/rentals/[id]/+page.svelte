@@ -16,13 +16,13 @@
 	<p>Nice find! This looks like a nice place to stay near {data.city}.</p>
 	<Button href="#" class="mt-4">Share on Twitter</Button>
 </Jumbo>
-<article class="bg-white grid grid-rows max-w-screen-xl px-4 py-8 mx-auto">
-	<div class="grid grid-rows md:grid-cols-2 gap-4">
+<article class="bg-white grid grid-rows max-w-screen-xl px-4 py-2 md:py-8 mx-auto">
+	<div class="grid grid-rows md:grid-cols-2 gap-4 mb-4">
         <div>
 		<RentalImage src={data.image} alt={`A picture of ${data.title}`} />
         </div>
 		<div>
-			<h3 class="text-3xl font-bold md:text-4xl">About {data.title}</h3>
+			<h3 class="text-3xl font-bold md:text-4xl mt-4">About {data.title}</h3>
             <div class="flex-row mt-2"><span class="text-m md:text-l font-semibold text-gray-800">Owner:</span> <span class="text-m md:text-l italic">{data.owner}</span></div>
             <div class="flex-row mt-2"><span class="text-m md:text-l font-semibold text-gray-800">Type:</span> <span class="text-m md:text-l italic">{data.type} - {data.category}</span></div>
             <div class="flex-row mt-2"><span class="text-m md:text-l font-semibold text-gray-800">Location:</span> <span class="text-m md:text-l italic">{data.city}</span></div>
@@ -31,6 +31,6 @@
 		</div>
 	</div>
     <div class="mx-auto">
-    <Map lat={data.location.lat} lng={data.location.lng} zoom={12} width={894} height={600} />
+    <Map lat={data.location.lat} lng={data.location.lng} zoom={12} width={934} height={640} />
     </div>
 </article>

@@ -39,6 +39,8 @@
 				<span class="text-sm italic">{bedrooms}</span>
 			</div>
 		</div>
-		<Map lat={location.lat} lng={location.lng} zoom={10} width={180} height={150} />
+		<div class="mt-1 mx-auto">
+			<Map lat={location.lat} lng={location.lng} zoom={10} width={354} height={246} />
+		</div>
 	</Card.Content>
 </Card.Root>

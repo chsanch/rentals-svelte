@@ -7,11 +7,11 @@
 <div class="text-center space-y-4 p-2">
 	<img
 		data-testid="rental-image"
-		class="w-48 md:w-64 md:h-auto mx-auto pr-4"
+		class="md:min-w-48 md:max-w-96 md:min-auto mx-auto pr-4"
 		loading="lazy"
 		{...imgProps}
 	/>
-	<button on:click={() => (dialogOpen = true)} class="text-xs" data-testid="rental-image-button"
+	<button on:click={() => (dialogOpen = true)} class="md:text-xs" data-testid="rental-image-button"
 		>View Larger</button
 	>
 </div>

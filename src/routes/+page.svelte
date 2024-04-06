@@ -21,7 +21,7 @@
 	<Button href="/about" data-testid="about-us-button" class="mt-4">About Us</Button>
 </Jumbo>
 
-<div class="md:grid grid-rows max-w-screen-xl px-4 py-8 mx-auto gap-3">
+<div class="md:grid grid-rows max-w-screen-xl md:px-4 md:py-4 mx-auto gap-3">
 	{#each data.data as rental}
 		<Rental {...rental} />
 	{/each}

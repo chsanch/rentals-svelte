@@ -15,7 +15,7 @@
 	let url = `rentals/${id}`;
 </script>
 
-<Card.Root>
+<Card.Root class="mb-4 md:mb-2">
 	<Card.Header>
 		<Card.Title data-testid="rental-title"><a href={url}>{title}</a></Card.Title>
 	</Card.Header>

@@ -2,22 +2,18 @@
 	import * as Card from '$lib/components/ui/card';
 	import RentalImage from '$lib/components/rental/image.svelte';
 	import Map from '$lib/components/map.svelte';
-	export let id;
-	export let title;
-	export let owner;
-	export let location;
-	export let category;
-	export let bedrooms;
-	export let city;
-	export let description;
-	export let image;
-	export let type;
+	/** @type {import('$lib/types').Rental} */
+	let { id, title, owner, location, category, bedrooms, city, image, type } = $props();
 	let url = `rentals/${id}`;
 </script>
 
 <Card.Root class="mb-4 md:mb-2">
 	<Card.Header>
-		<Card.Title data-testid="rental-title" class="text-3xl font-bold px-2 mb-0 text-center md:text-left"><a href={url}>{title}</a></Card.Title>
+		<Card.Title
+			data-testid="rental-title"
+			class="text-3xl font-bold px-2 mb-0 text-center md:text-left"
+			><a href={url}>{title}</a></Card.Title
+		>
 	</Card.Header>
 	<Card.Content class="md:flex">
 		<RentalImage src={image} alt={`A picture of ${title}`} />

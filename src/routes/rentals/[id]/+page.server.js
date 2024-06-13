@@ -1,5 +1,6 @@
 const COMMUNITY_CATEGORIES = ['Condo', 'Townhouse', 'Apartment'];
 
+/** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, params }) {
 	const res = await fetch(`/api/${params.id}`);
 	let { data } = await res.json();
@@ -12,5 +13,6 @@ export async function load({ fetch, params }) {
 		type = 'Standalone';
 	}
 
+	/** @type {import('$lib/types').Rental} */
 	return { id, type, ...attributes };
 }

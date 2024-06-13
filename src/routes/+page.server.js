@@ -1,8 +1,10 @@
 // get data from the route /api
 const COMMUNITY_CATEGORIES = ['Condo', 'Townhouse', 'Apartment'];
 
+/** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
 	const res = await fetch('/api');
+	/** @type {import('$lib/types').RentalsJson} */
 	let { data } = await res.json();
 
 	const parsed = data.map((rental) => {
@@ -16,6 +18,8 @@ export async function load({ fetch }) {
 		}
 
 		return { id, type, ...attributes };
-	}); // return the data
+	});
+
+	/** @type {import('$lib/types').Rentals} */
 	return { data: parsed };
 }

@@ -1,10 +1,10 @@
 <script>
+	/** @type {import('$lib/types').Rental} */
 	export let data;
 	import Jumbo from '$lib/components/jumbo.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import RentalImage from '$lib/components/rental/image.svelte';
 	import Map from '$lib/components/map.svelte';
-	import Rental from '$lib/components/rental.svelte';
 </script>
 
 <Jumbo>

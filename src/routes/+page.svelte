@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import Jumbo from '$lib/components/jumbo.svelte';
 	import Rental from '$lib/components/rental.svelte';
+	/** @type {import('$lib/types').Rentals} */
 	export let data;
 </script>
 

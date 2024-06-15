@@ -1,10 +1,18 @@
+<!--
+	@component
+	- A navigation bar component with links to the home, about, and contact pages. It will render a navigation bar with
+		links to the home, about, and contact pages.
+
+	@example
+	<NavBar />
+-->
 <script>
 	import { page } from '$app/stores';
 
 	let active_class = 'text-white rounded-md px-3 py-2 text-m font-bold';
 	let inactive_class = 'text-gray-300 hover:bg-orange-700 rounded-md px-3 py-2 text-m font-medium';
-	let is_active = (href) => href === $page.url.pathname;
-	let link_class = (href) => (is_active(href) ? active_class : inactive_class);
+	let is_active = (/** @type {string} */ href) => href === $page.url.pathname;
+	let link_class = (/** @type {string} */ href) => (is_active(href) ? active_class : inactive_class);
 </script>
 
 <nav class="bg-orange-400" data-testid="menu">

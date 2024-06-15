@@ -1,3 +1,20 @@
+<!--
+	@component
+	- A rental component with a title, owner, location, type, bedrooms, city, and an image. It will render
+		a title, owner, location, type, bedrooms, city, and an image in the left column and a map in the right column.
+	
+	@example
+	<Rental
+		title="Modern, Clean, and Spacious"
+		owner="Mike Smith"
+		location={{ lat: 37.7749, lng: -122.4194 }}
+		type="Private Room"
+		bedrooms={3}
+		city="San Francisco"
+		image="/images/rentals/rental-1.jpg"
+	/>
+	
+-->
 <script>
 	import * as Card from '$lib/components/ui/card';
 	import RentalImage from '$lib/components/rental/image.svelte';

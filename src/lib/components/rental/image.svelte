@@ -1,6 +1,14 @@
+<!-- 
+	@component
+	- A component that renders an image with a button to view a larger version in a dialog.
+
+	@example
+	<RentalImage src="/images/rentals/rental-1.jpg" alt="A picture of a rental" />
+-->
 <script>
 	let dialogOpen = $state(false);
-	let { ...imgProps } = $props();
+	/** @type {{src: string, alt: string, imgProps?: any}} */
+	let { src, alt, ...imgProps } = $props();
 	import * as Dialog from '$lib/components/ui/dialog';
 </script>
 

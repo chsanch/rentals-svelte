@@ -7,8 +7,8 @@
 -->
 <script>
 	let dialogOpen = $state(false);
-	/** @type {{src: string, alt: string, imgProps?: any}} */
-	let { src, alt, ...imgProps } = $props();
+	/** @type {{src: string, alt: string}} */
+	let { src, alt } = $props();
 	import * as Dialog from '$lib/components/ui/dialog';
 </script>
 
@@ -17,10 +17,11 @@
 		data-testid="rental-image"
 		class="md:min-w-48 md:max-w-64 md:min-auto mx-auto pr-4"
 		loading="lazy"
-		{...imgProps}
+		{src}
+		{alt}
 	/>
 	<button 
-		on:click={() => (dialogOpen = true)} 
+		onclick={() => (dialogOpen = true)} 
 		class="invisible md:visible md:text-xs md:display-block" 
 		data-testid="rental-image-button"
 	>
@@ -33,7 +34,8 @@
 			data-testid="rental-image-larger"
 			class="w-full h-auto mx-auto pr-4"
 			loading="lazy"
-			{...imgProps}
+			{src}
+			{alt}
 		/>
 	</Dialog.Content>
 	<Dialog.Trigger />
